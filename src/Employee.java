@@ -1,14 +1,17 @@
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Employee {
     private String fullname;
     private int department;
     private double salary;
+    private static int counter;
     private int id;
 
-    Employee(int id, String fullname, int department, double salary) {
+    Employee(String fullname, int department, double salary) {
         this.fullname = fullname;
         this.department = department;
         this.salary = salary;
-        this.id = id;
+        this.id = counter++;
     }
 
     //getters
@@ -43,11 +46,7 @@ public class Employee {
         this.department = department;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    int counterGrow(int counter){
+        return counter++;
     }
 }
